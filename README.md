@@ -5,17 +5,17 @@ Incode (the Software City) is a VR web app for software visualization. It can be
 The following instructions describe how to connect the VR headset with the Windows PC so that the GPU inside the PC is used. The focus is on a wireless setup with the [Oculus Air Link](https://support.oculus.com/airlink/) feature. If the wireless connection is too unstable, the graphics preferences can be [adjusted](https://support.oculus.com/articles/headsets-and-accessories/oculus-link/oculus-link-performance-preferences/) or a wired connection may be used (see [Oculus Link](https://support.oculus.com/airlink/)). Alternatively, the Oculus Quest 2 has a web browser called Oculus Browser which can run the web application directly on the VR device. However, the size of the generated cities is very limited here because of the performance.
 
 **Components:**
-- Linksys router (username: `root`, password: `12345678`)
-- Windows PC (password: `Welcome`)
+- Linksys router
+- Windows PC
 - Oculus Quest 2
 
-**Facebook Account**
-- Username: thomas.hindermann@ost.ch
-- Password: OST12345
+**Oculus Account**
+Use your own compatible account to sign in to the Oculus PC App and headset.
+Keep account and device credentials in your local password manager.
 
 **Infrastructure:**
 1. Connect the PC to the Linksys router via Ethernet cable.
-2. Connect the VR headset to the correct WiFi (name: `SoftwareCityNetwork`, password: `12345678`). Ideally the router is in the same room as the headset or in line-of-sight, and at least 1m off the ground.
+2. Connect the Oculus Quest 2 to the router's Wi-Fi network using the locally configured credentials.
 
 **On your desktop PC:**
 1. Clone this repo: `git clone https://gitlab.ost.ch/iza/softwarecity.git`
@@ -34,3 +34,8 @@ The following instructions describe how to connect the VR headset with the Windo
 6. Inside `Virtual Space` start Google Chrome and visit incode with `https://localhost:8080/`. If the demo project inside the wep app cannot be started, the VR headset was not recognized as a VR device by Chrome. In this case try to restart Virtual Space, Google Chrome and if necessary the Oculus PC App.
 
 > Hint: incode was developed and tested with npm version: 6.14.14 and node version 14.17.5
+
+## GitHub access
+The app reads public repositories through unauthenticated GitHub API requests. These requests share GitHub's unauthenticated rate limit for your public IP address. If the limit is reached, wait for it to reset before trying again.
+
+The app runs in the browser. Do not embed personal access tokens in its source or build configuration, because they would be visible to anyone who loads the app.
